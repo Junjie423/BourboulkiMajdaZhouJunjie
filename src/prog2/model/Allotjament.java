@@ -6,12 +6,13 @@ public class Allotjament implements InAllotjament{
     private String id_;
     private long estadaMinimaAlta;
     private long estadaMinimaBaixa;
-    private Temp temporada;
 
     // Constructor
-    public Allotjament(String nom, String id){
+    public Allotjament(String nom, String id, long estadaMinimaAlta, long estadaMinimaBaixa){
         this.nom_ = nom;
         this.id_ = id;
+        this.estadaMinimaAlta = estadaMinimaAlta;
+        this.estadaMinimaBaixa = estadaMinimaBaixa;
     }
 
     // Mètodes de la classe Allotjament

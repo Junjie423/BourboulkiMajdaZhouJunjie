@@ -11,13 +11,13 @@ public class Camping implements InCamping {
     private String nom;
     private ArrayList<Allotjament> allotjaments;
     private ArrayList<Client> clients;
-    private ArrayList<Reserva> reserves;
+    private LlistaReserves reserves;
     // Constructor
     public Camping(String nom) {
         this.nom = nom;
         this.allotjaments = new ArrayList<>();
         this.clients = new ArrayList<>();
-        this.reserves = new ArrayList<>();
+        this.reserves = new LlistaReserves();
     }
 
     // Mètodes de la classe camping
@@ -34,7 +34,7 @@ public class Camping implements InCamping {
      * @return
      */
     public LlistaReserves getLlistaReserves() {
-        return null;
+        return reserves;
     }
 
     /**
@@ -72,7 +72,7 @@ public class Camping implements InCamping {
      */
     @Override
     public int getNumReserves() {
-        return reserves.size();
+        return reserves.getNumReserves();
     }
 
     /**
@@ -199,7 +199,7 @@ public class Camping implements InCamping {
     @Override
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         Reserva nouReserva = new Reserva(id_, dni_, dataEntrada, dataSortida);
-        this.reserves.add(nouReserva);
+        this.reserves.afegirReserva();
     }
 
     /**
