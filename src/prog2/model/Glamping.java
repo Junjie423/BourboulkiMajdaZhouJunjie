@@ -1,17 +1,13 @@
 package prog2.model;
 
-public class Glamping extends Allotjament{
+public class Glamping extends Casa{
     // Atributs de Glamping
-    private String mida, material;
-    private int habitacions, placesPersones;
+    private String material;
     private boolean casaMascota;
 
     // Constructor
     public Glamping(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, String material, boolean casaMascota){
-        super(nom_, idAllotjament_);
-        this.mida = mida;
-        this.habitacions = habitacions;
-        this.placesPersones = placesPersones;
+        super(nom_, idAllotjament_, 3, 3, mida, habitacions, placesPersones);
         this.material = material;
         this.casaMascota = casaMascota;
     }
@@ -24,8 +20,11 @@ public class Glamping extends Allotjament{
      */
     @Override
     public boolean correcteFuncionament() {
-
-        return false;
+        boolean funcionament = false;
+        if (this.casaMascota){
+            funcionament = true;
+        }
+        return funcionament;
     }
 
     /**

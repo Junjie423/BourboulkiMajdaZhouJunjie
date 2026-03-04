@@ -1,17 +1,13 @@
 package prog2.model;
 
-public class Bungalow extends Allotjament{
+public class Bungalow extends Casa{
     // Atributs del Bungalow
-    private String mida;
-    private int habitacions, placesPersones, placesParquing;
+    private int placesParquing;
     private boolean terrassa, tv, aireFred;
 
     // Constructor
     public Bungalow(String nom_, String idAllotjament_, String mida, int habitacions, int placesPersones, int placesParquing, boolean terrassa, boolean tv, boolean aireFred){
-        super(nom_,idAllotjament_,7,4);
-        this.mida = mida;
-        this.habitacions = habitacions;
-        this.placesPersones = placesPersones;
+        super(nom_,idAllotjament_, 7, 4, mida, habitacions, placesPersones);
         this.placesParquing = placesParquing;
         this.terrassa = terrassa;
         this.tv = tv;
@@ -26,8 +22,11 @@ public class Bungalow extends Allotjament{
      */
     @Override
     public boolean correcteFuncionament() {
-
-        return false;
+        boolean funcionament = false;
+        if (this.aireFred){
+            funcionament = true;
+        }
+        return funcionament;
     }
 
     /**

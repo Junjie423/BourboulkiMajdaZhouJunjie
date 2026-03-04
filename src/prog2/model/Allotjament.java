@@ -1,6 +1,6 @@
 package prog2.model;
 
-public class Allotjament implements InAllotjament{
+public abstract class Allotjament implements InAllotjament{
     // Atributs de la classe Allotjament
     private String nom_;
     private String id_;
@@ -95,7 +95,5 @@ public class Allotjament implements InAllotjament{
      * @return true si l'allotjament funciona correctament, false altrament.
      */
     @Override
-    public boolean correcteFuncionament() {
-        return false;
-    }
+    public abstract boolean correcteFuncionament();
 }

@@ -20,8 +20,11 @@ public class Parcela extends Allotjament{
      */
     @Override
     public boolean correcteFuncionament() {
-
-        return false;
+        if(this.connexioElectrica){
+            return true;
+        } else{
+            return false;
+        }
     }
 
     /**
