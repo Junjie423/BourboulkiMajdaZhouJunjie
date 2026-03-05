@@ -33,8 +33,8 @@ public class Glamping extends Casa{
      * @return info
      */
     public String toString(){
-        String info = "";
-
+        String info = super.toString();
+        info += " Glamping{material=" + this.material + ", casaMascota=" + this.casaMascota + "}";
         return info;
     }
 }

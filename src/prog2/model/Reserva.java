@@ -16,43 +16,84 @@ public class Reserva implements InReserva {
         this.dataSortida = dataSortida;
     }
 
+    // Mètodes de Reserva
+    /**
+     * Obté l'allotjament
+     *
+     * @return allotjament
+     */
     @Override
     public Allotjament getAllotjament_() {
-        return null;
+        return this.allotjament;
     }
 
+    /**
+     * Obté el client
+     *
+     * @return client
+     */
     @Override
     public Client getClient() {
-        return null;
+        return this.client;
     }
 
+    /**
+     * Obté la data d'entrada
+     *
+     * @return dataEntrada
+     */
     @Override
     public LocalDate getDataEntrada() {
-        return null;
+        return this.dataEntrada;
     }
 
+    /**
+     * Obté la data de sortida
+     *
+     * @return dataSortida
+     */
     @Override
     public LocalDate getDataSortida() {
-        return null;
+        return this.dataSortida;
     }
 
+    /**
+     * Estableix l'allotjament
+     * @param allotjament_
+     *
+     */
     @Override
     public void setAllotjament_(Allotjament allotjament_) {
-
+        this.allotjament = allotjament_;
     }
 
+    /**
+     * Estableix el client
+     * @param client_
+     *
+     */
     @Override
     public void setClient(Client client_) {
-
+        this.client = client_;
     }
 
+    /**
+     * Estableix la data d'entrada
+     * @param dataEntrada_
+     *
+     */
     @Override
     public void setDataEntrada(LocalDate dataEntrada_) {
-
+        this.dataEntrada = dataEntrada_;
     }
 
+    /**
+     * Estableix la data de sortida
+     * @param dataSortida_
+     *
+     */
     @Override
     public void setDataSortida(LocalDate dataSortida_) {
-
+        this.dataSortida = dataSortida_;
     }
 }

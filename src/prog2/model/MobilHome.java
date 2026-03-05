@@ -12,6 +12,23 @@ public class MobilHome extends Casa{
 
     // Mètodes de MobilHome
     /**
+     * Comprova si té terrassaBarbacoa
+     *
+     * @return terrassaBarbacoa
+     */
+    public boolean isTerrassaBarbacoa() {
+        return this.terrassaBarbacoa;
+    }
+
+    /**
+     * Estableix terrassaBarbacoa
+     * @param terrassaBarbacoa_
+     *
+     */
+    public void setTerrassaBarbacoa(boolean terrassaBarbacoa_) {
+        this.terrassaBarbacoa = terrassaBarbacoa_;
+    }
+    /**
      * Comprova que el MobilHome tingui un funcionament correcte.
      *
      * @return funcionament del MobilHome.
@@ -31,8 +48,8 @@ public class MobilHome extends Casa{
      * @return info
      */
     public String toString(){
-        String info = "";
-
+        String info = super.toString();
+        info += " MobilHome{terrassaBarbacoa=" + this.terrassaBarbacoa + "}";
         return info;
     }
 }

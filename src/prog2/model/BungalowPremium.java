@@ -14,6 +14,42 @@ public class BungalowPremium extends Bungalow{
 
     // Mètodes de BungalowPremium
     /**
+     * Obté el codiWifi
+     *
+     * @return string codiWifi
+     */
+    public String getcodiWifi() {
+        return this.codiWifi;
+    }
+
+    /**
+     * Estableix el codiWifi
+     * @param codiWifi_
+     *
+     */
+    public void setPlacesParquing(String codiWifi_) {
+        this.codiWifi = codiWifi_;
+    }
+
+    /**
+     * Comprova si té serveiExtra
+     *
+     * @return serveiExtra
+     */
+    public boolean isServeiExtra() {
+        return this.serveiExtra;
+    }
+
+    /**
+     * Estableix serveiExtra
+     * @param serveiExtra_
+     *
+     */
+    public void setServeiExtra(boolean serveiExtra_) {
+        this.serveiExtra = serveiExtra_;
+    }
+
+    /**
      * Comprova que el BungalowPremium tingui un funcionament correcte.
      *
      * @return funcionament del BungalowPremium.
@@ -34,8 +70,8 @@ public class BungalowPremium extends Bungalow{
      * @return info
      */
     public String toString(){
-        String info = "";
-
+        String info = super.toString();
+        info += " BungalowPremium{serveiExtra=" + this.serveiExtra + ", codiWifi=" + this.codiWifi + "}";
         return info;
     }
 }

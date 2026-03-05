@@ -67,8 +67,5 @@ public abstract class Casa extends Allotjament{
     public void setPlacesPersones(int placesPersones) {
         this.placesPersones = placesPersones;
     }
-    @Override
-    public abstract String toString(){
-        String info = super.toString();
-    };
+
 }
