@@ -14,6 +14,42 @@ public class Parcela extends Allotjament{
 
     // Mètodes de Parcela
     /**
+     * Obté la mida de la parcela
+     *
+     * @return mida de la parcela
+     */
+    public float getMida() {
+        return this.metres;
+    }
+
+    /**
+     * Estableix la mida de la parcela
+     * @param metres_
+     *
+     */
+    public void setMida(float metres_) {
+        this.metres= metres_;
+    }
+
+    /**
+     * Comprova si té connexió electrica
+     *
+     * @return conexioElectrica
+     */
+    public boolean isConnexioElectrica() {
+        return this.connexioElectrica;
+    }
+
+    /**
+     * Estableix la connexió electrica de la parcela
+     * @param connexioElectrica_
+     *
+     */
+    public void setConnexioElectrica(boolean connexioElectrica_) {
+        this.connexioElectrica= connexioElectrica_;
+    }
+
+    /**
      * Comprova que la Parcela tingui un funcionament correcte.
      *
      * @return funcionament de la Parcela.
@@ -33,7 +69,8 @@ public class Parcela extends Allotjament{
      * @return info
      */
     public String toString(){
-        String info = "";
+        String info = super.toString();
+        info += " Parcela{mida=" + this.metres + ", onnexioElectrica=" + this.connexioElectrica + "}";
 
         return info;
     }

@@ -1,6 +1,6 @@
 package prog2.model;
 
-public abstract class Allotjament implements InAllotjament{
+public abstract class Allotjament implements InAllotjament {
     // Atributs de la classe Allotjament
     private String nom_;
     private String id_;
@@ -8,7 +8,7 @@ public abstract class Allotjament implements InAllotjament{
     private long estadaMinimaBaixa;
 
     // Constructor
-    public Allotjament(String nom, String id, long estadaMinimaAlta, long estadaMinimaBaixa){
+    public Allotjament(String nom, String id, long estadaMinimaAlta, long estadaMinimaBaixa) {
         this.nom_ = nom;
         this.id_ = id;
         this.estadaMinimaAlta = estadaMinimaAlta;
@@ -16,6 +16,7 @@ public abstract class Allotjament implements InAllotjament{
     }
 
     // Mètodes de la classe Allotjament
+
     /**
      * Obté el nom de l'allotjament.
      *
@@ -65,7 +66,7 @@ public abstract class Allotjament implements InAllotjament{
     @Override
     public long getEstadaMinima(Temp temp) {
         long tmp = 0;
-        switch(temp){
+        switch (temp) {
             case ALTA:
                 tmp = this.estadaMinimaAlta;
                 break;
@@ -96,4 +97,12 @@ public abstract class Allotjament implements InAllotjament{
      */
     @Override
     public abstract boolean correcteFuncionament();
+
+    @Override
+    public String toString(){
+        String info = "";
+        info = "Nom=" + this.nom_ + ", Id=" + this.id_ + ", estada mínima en temp ALTA: " + this.estadaMinimaAlta
+                + ", estada mínima en temp BAIXA: " + this.estadaMinimaBaixa + ".";
+        return info;
+    }
 }
