@@ -70,7 +70,7 @@ public class Parcela extends Allotjament{
      */
     public String toString(){
         String info = super.toString();
-        info += " Parcela{mida=" + this.metres + ", onnexioElectrica=" + this.connexioElectrica + "}";
+        info += " Parcela{mida=" + this.metres + ", connexioElectrica=" + this.connexioElectrica + "}";
 
         return info;
     }

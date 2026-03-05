@@ -199,9 +199,14 @@ public class Camping implements InCamping {
     @Override
     public void afegirReserva(String id_, String dni_, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         Allotjament allotjamentTrobat = buscarAllotjament(id_);
+        if (allotjamentTrobat == null) {
+            throw new ExcepcioReserva("L'allotjament amb id "+ id_ + " no existeix");
+        }
         Client clientTrobat = buscarClient(dni_);
-        Reserva nouReserva = new Reserva(allotjamentTrobat, clientTrobat, dataEntrada, dataSortida);
-        this.reserves.afegirReserva(nouReserva);
+        if (clientTrobat == null) {
+            throw new ExcepcioReserva("El client amb DNI " + dni_ + " no existeix");
+        }
+        this.reserves.afegirReserva(allotjamentTrobat, clientTrobat, dataEntrada, dataSortida);
     }
 
     /**
@@ -229,7 +234,7 @@ public class Camping implements InCamping {
      * @return l'allotjament amb estada mínima de la temporada baixa més curta.
      */
     @Override
-    public Allotjament getAllotjamentEstadaMesCurta(InAllotjament.Temp temp) {
+    public Allotjament getAllotjamentEstadaMesCurta(Temp temp) {
         Allotjament allotjamentMesCurt = null;
         Iterator itrAllotjaments = this.allotjaments.iterator();
         long estadaMinMesCurta = 99999;
@@ -284,10 +289,10 @@ public class Camping implements InCamping {
      * @param data
      * @return l'allotjament amb estada mínima de la temporada baixa més curta.
      */
-    public static InAllotjament.Temp getTemporada(LocalDate data){
+    public static Temp getTemporada(LocalDate data) {
         int dia = data.getDayOfMonth();
         int mes = data.getMonthValue();
-        InAllotjament.Temp temp = null;
+        Temp temp = null;
 
         if (mes == 3 && dia >= 21 || mes > 3 && mes < 9 || mes == 9 && dia <= 20){
             temp = InAllotjament.Temp.ALTA;
