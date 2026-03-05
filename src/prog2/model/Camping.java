@@ -5,6 +5,8 @@ import prog2.vista.ExcepcioReserva;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
+import static prog2.model.InAllotjament.Temp;//Importa l'enum Temp
+import static prog2.model.InAllotjament.Temp.*; //Importa el contingut
 
 public class Camping implements InCamping {
     // Atributs de Camping
@@ -12,6 +14,7 @@ public class Camping implements InCamping {
     private ArrayList<Allotjament> allotjaments;
     private ArrayList<Client> clients;
     private LlistaReserves reserves;
+
     // Constructor
     public Camping(String nom) {
         this.nom = nom;
@@ -21,8 +24,10 @@ public class Camping implements InCamping {
     }
 
     // Mètodes de la classe camping
+
     /**
      * Retorna el nom del càmping.
+     *
      * @return el nom del càmping.
      */
     public String getNom() {
@@ -31,6 +36,7 @@ public class Camping implements InCamping {
 
     /**
      * Retorna la llista de reserves del camping.
+     *
      * @return
      */
     public LlistaReserves getLlistaReserves() {
@@ -219,8 +225,8 @@ public class Camping implements InCamping {
         int numOperatius = 0;
         Iterator itrAllotjaments = this.allotjaments.iterator();
         while (itrAllotjaments.hasNext()) {
-            Allotjament a =  (Allotjament) itrAllotjaments.next();
-            if (a.correcteFuncionament()){
+            Allotjament a = (Allotjament) itrAllotjaments.next();
+            if (a.correcteFuncionament()) {
                 numOperatius++;
             }
         }
@@ -255,11 +261,11 @@ public class Camping implements InCamping {
      * @param id_
      * @return l'allotjament corresponent al id_.
      */
-    public Allotjament buscarAllotjament(String id_){
+    private Allotjament buscarAllotjament(String id_) {
         Iterator itrAllotjaments = allotjaments.iterator();
-        while (itrAllotjaments.hasNext()){
+        while (itrAllotjaments.hasNext()) {
             Allotjament a = (Allotjament) itrAllotjaments.next();
-            if (a.getId().equals(id_)){
+            if (a.getId().equals(id_)) {
                 return a;
             }
         }
@@ -272,11 +278,11 @@ public class Camping implements InCamping {
      * @param dni_
      * @return el client corresponent ak dni_.
      */
-    public Client buscarClient(String dni_){
+    private Client buscarClient(String dni_) {
         Iterator itrClients = clients.iterator();
-        while (itrClients.hasNext()){
+        while (itrClients.hasNext()) {
             Client c = (Client) itrClients.next();
-            if (c.getDni().equals(dni_)){
+            if (c.getDni().equals(dni_)) {
                 return c;
             }
         }
@@ -294,10 +300,10 @@ public class Camping implements InCamping {
         int mes = data.getMonthValue();
         Temp temp = null;
 
-        if (mes == 3 && dia >= 21 || mes > 3 && mes < 9 || mes == 9 && dia <= 20){
-            temp = InAllotjament.Temp.ALTA;
-        } else{
-            temp = InAllotjament.Temp.BAIXA;
+        if (mes == 3 && dia >= 21 || mes > 3 && mes < 9 || mes == 9 && dia <= 20) {
+            temp = ALTA;
+        } else {
+            temp = BAIXA;
         }
         return temp;
     }
