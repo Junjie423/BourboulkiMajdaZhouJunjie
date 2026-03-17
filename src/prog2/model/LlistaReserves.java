@@ -45,10 +45,8 @@ public class LlistaReserves implements InLlistaReserves{
         Iterator<Reserva> itrReserves = this.reserves_.iterator();
         while (itrReserves.hasNext() && disponible) {
             Reserva r = itrReserves.next();
-            if(r.getAllotjament_().getId().equals(allotjament_.getId())){
-                if(!(r.getDataEntrada().isAfter(dataSortida_)) && !(r.getDataSortida().isBefore(dataEntrada_))){
+            if(reservaAllotjament.equals(allotjament) && dataSortidaReserva.isAfter(dataEntrada) && dataEntradaReserva.isBefore(dataSortida)){
                     disponible = false;
-                }
             }
         }
         return disponible;
