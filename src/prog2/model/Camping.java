@@ -223,9 +223,9 @@ public class Camping implements InCamping {
     @Override
     public int calculAllotjamentsOperatius() {
         int numOperatius = 0;
-        Iterator itrAllotjaments = this.allotjaments.iterator();
+        Iterator <Allotjament> itrAllotjaments = this.allotjaments.iterator();
         while (itrAllotjaments.hasNext()) {
-            Allotjament a = (Allotjament) itrAllotjaments.next();
+            Allotjament a = itrAllotjaments.next();
             if (a.correcteFuncionament()) {
                 numOperatius++;
             }
@@ -242,10 +242,10 @@ public class Camping implements InCamping {
     @Override
     public Allotjament getAllotjamentEstadaMesCurta(Temp temp) {
         Allotjament allotjamentMesCurt = null;
-        Iterator itrAllotjaments = this.allotjaments.iterator();
+        Iterator <Allotjament> itrAllotjaments = this.allotjaments.iterator();
         long estadaMinMesCurta = 99999;
         while (itrAllotjaments.hasNext()) {
-            Allotjament a = (Allotjament) itrAllotjaments.next();
+            Allotjament a = itrAllotjaments.next();
             long estadaMinima = a.getEstadaMinima(temp);
             if (estadaMinima < estadaMinMesCurta) {
                 estadaMinMesCurta = estadaMinima;
@@ -262,9 +262,9 @@ public class Camping implements InCamping {
      * @return l'allotjament corresponent al id_.
      */
     private Allotjament buscarAllotjament(String id_) {
-        Iterator itrAllotjaments = allotjaments.iterator();
+        Iterator <Allotjament> itrAllotjaments = allotjaments.iterator();
         while (itrAllotjaments.hasNext()) {
-            Allotjament a = (Allotjament) itrAllotjaments.next();
+            Allotjament a = itrAllotjaments.next();
             if (a.getId().equals(id_)) {
                 return a;
             }
@@ -279,9 +279,9 @@ public class Camping implements InCamping {
      * @return el client corresponent ak dni_.
      */
     private Client buscarClient(String dni_) {
-        Iterator itrClients = clients.iterator();
+        Iterator <Client> itrClients = clients.iterator();
         while (itrClients.hasNext()) {
-            Client c = (Client) itrClients.next();
+            Client c = itrClients.next();
             if (c.getDni().equals(dni_)) {
                 return c;
             }
